@@ -2,7 +2,11 @@
 # coding: utf-8
 
 # In[1]:
-
+import base64
+import io
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 
 import numpy as np
 from flask import Flask, request, jsonify
@@ -41,7 +45,25 @@ def predict():
     # output = {'DiabetesPrediction' :prediction}
     output = prediction
     # output = pd.DataFrame([output])
-    return jsonify(DiabetesPrediction =output[0])
+
+    # Shap:
+
+    explainer = shap.TreeExplainer(model)
+    shap_values = explainer.shap_values(data_df)
+    force_plot = shap.force_plot(explainer.expected_value[1], shap_values[1], data_df,
+                                 feature_names=['BMI', 'PhysHlth', 'DiffWalk', 'Stroke', 'PhysActivity',
+                                                'HeartDiseaseorAttack', 'genHlth_1.0', 'genHlth_2.0', 'genHlth_3.0',
+                                                'genHlth_4.0', 'genHlth_5.0',
+                                                'age_1.0', 'age_2.0', 'age_3.0', 'age_4.0', 'age_5.0', 'age_6.0',
+                                                'age_7.0', 'age_8.0', 'age_9.0', 'age_10.0', 'age_11.0', 'age_12.0',
+                                                'age_13.0'], show=False, matplotlib=True,
+                                 plot_cmap=['#77dd77', '#f99191'])
+    buf = io.BytesIO()
+    plt.savefig(buf, format="png", dpi=150, bbox_inches='tight')
+
+    # shap.save_html("force_plot.html", force_plot)
+    dataToTake = base64.b64encode(buf.getbuffer()).decode("ascii")
+    return jsonify(DiabetesPrediction=output[0], ShapImg=dataToTake)
 
 
 # In[ ]:
