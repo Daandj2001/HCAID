@@ -149,12 +149,16 @@ namespace DiabetesPrediction.Controllers
                     predictionModel.Age_13 = 1;
                 }
                 Prediction prediction = await _webApiHelper.PredictionGet(predictionModel);
-                return View("Prediction");
+                return View("Prediction", prediction);
             }
             else
             {
                 return View();
             }
+        }
+        public IActionResult Prediction()
+        {
+            return View();
         }
         public IActionResult HowDoesItWork()
         {
