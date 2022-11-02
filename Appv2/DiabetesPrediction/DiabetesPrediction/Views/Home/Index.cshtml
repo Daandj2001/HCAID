@@ -2,12 +2,18 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <p>With this webapp you can see if you may have diabetes. The app uses a simple AI to calculate if you have diabetes based on your answers.</br> Your data wil not be stored and wil only be used for this test</p>
-    <p>What is diabetes?</p>
-    <p>Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin well. Glucose then stays in your blood and doesn’t reach your cells.</p>
-    <p>Over time, having too much glucose in your blood can cause health problems. Although diabetes has no cure, you can take steps to manage your diabetes and stay healthy.</p>
-    <a class="btn btn-primary" asp-controller="Home" asp-action="PredictForm">Predict</a>
+<div class="container">
+    <div class="row">
+        <div class=" col-md-4">
+            <p class="mt-5" style="font-family:verdana; font-size:30px;">Check if you have diabetes</p>
+            <p style="font-size:21px;">Reiceive a predicton by answering a couple of questions.</p>
+            <a class="btn btn-outline-primary mb-4" asp-controller="Home" asp-action="PredictForm">Predict</a>
+            <a class="btn btn-outline-secondary mb-4" asp-controller="Home" asp-action="HowDoesItWork">More info</a>
+            <p style="font-family:verdana; font-size:24px;">About diabetes.</p>
+            <p style="font-size:18px;">Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin well. Glucose then stays in your blood and doesn’t reach your cells.</p>
+        </div>
+        <div class="col-md-8">
+            <img src="~/Image/DiabtesImg.jpg" alt="img" class="rounded mt-5 mx-auto d-block img-fluid" />
+        </div>
+    </div>
 </div>

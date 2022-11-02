@@ -5,7 +5,23 @@
 @{
     ViewData["Title"] = "Predict";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Prediction is @Model.DiabetesPrediction</p>
-<img src="data:image/png;base64, @Model.ShapImg" alt="Shap img" />
+
+ <div class="container border border-secondary rounded-3 shadow">
+     <h3>Prediction</h3>
+     @if (Model.DiabetesPrediction == 0){
+        <p>We predict that you have no diabetes</p>
+     }
+    @if (Model.DiabetesPrediction == 1)
+    {
+        <p>We predict that you have diabetes</p>
+    }
+    
+    <img src="data:image/png;base64, @Model.ShapImg" alt="Shap img" width="850" class="mx-auto d-block img-fluid " />
+ </div>
+
+<div class="container border border-secondary rounded-3 shadow mt-5">
+    <h3>Disclaimer</h3>
+    <p>The computer uses ith knowledge to give you a prediction if you have diabetes. it is importand to remember this is a prediction not a definitive answer. No doctor or other specialist has looked at your data, this means it is not always 100% accurate. If you have doubts about the prediction or it predicts that you have diabetes make sure to visit a docter. </p>
+</div>
+

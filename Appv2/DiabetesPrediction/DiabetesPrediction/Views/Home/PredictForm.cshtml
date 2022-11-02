@@ -17,9 +17,6 @@
 
 <body>
 
-    <h1>@ViewData["Title"]</h1>
-
-    <p>Predict here.</p>
     <h5 class=" text-center m-2 p-2">Predict</h5>
     <form asp-action="PredictForm" method="post" class="m-2">
         <div asp-validation-summary="ModelOnly"></div>
@@ -61,28 +58,29 @@
 
         
             <div class="row mt-2">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-5">
            
                     <input type="checkbox" asp-for="DiffWalk" class="form-check-input" />
                     <label asp-for="DiffWalk"></label>
                     <span asp-validation-for="DiffWalk" class="text-danger"></span>
                 </div>
-                <div class="form-group col-md-8">
-            
-                    <input asp-for="Stroke" class="form-check-input" />
-                    <label asp-for="Stroke"></label>
-                    <span asp-validation-for="Stroke" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="row mt-2">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-7">
 
                     <input asp-for="HeartDiseaseorAttack" class="form-check-input" />
                     <label asp-for="HeartDiseaseorAttack"></label>
                     <span asp-validation-for="HeartDiseaseorAttack" class="text-danger"></span>
                 </div>
-                <div class="form-group col-md-8">
+                
+            </div>
+
+            <div class="row mt-2 mb-3">
+                <div class="form-group col-md-5">
+
+                    <input asp-for="Stroke" class="form-check-input" />
+                    <label asp-for="Stroke"></label>
+                    <span asp-validation-for="Stroke" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-7">
             
                     <input class="form-check-input" asp-for="PhysActivity" />
                     <label asp-for="PhysActivity"></label>
@@ -90,7 +88,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Predict</button>
-        <a asp-action="Index" class="btn btn-warning ml-3 mt-3">Cancel</a>
+        <button type="submit" class="btn btn-outline-primary mt-3">Predict</button>
+        <a asp-action="Index" class="btn btn-outline-warning ml-3 mt-3">Cancel</a>
     </form>
 </body>
