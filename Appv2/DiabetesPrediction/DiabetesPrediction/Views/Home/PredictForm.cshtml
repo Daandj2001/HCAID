@@ -17,13 +17,14 @@
 
 <body>
 
-    <h5 class=" text-center m-2 p-2">Predict</h5>
+    <p class="mt-5" style="font-family:verdana; font-size:30px;">Get your prediction</p>
+    <p style="font-size:21px;">To receive your personal prediction please fill in this form.</p>
     <form asp-action="PredictForm" method="post" class="m-2">
         <div asp-validation-summary="ModelOnly"></div>
         <div class="container border border-secondary rounded-3 shadow">
             <div class="row mt-2">
                 <div class="form-group col-md-4">
-                    <label asp-for="Height"></label>
+                    <label asp-for="Height" class="mt-4"></label>
                     <input asp-for="Height" class="form-control" style="width: 120px;" />
                     <span asp-validation-for="Height" class="text-danger"></span>
                 </div>
@@ -89,6 +90,6 @@
             </div>
         </div>
         <button type="submit" class="btn btn-outline-primary mt-3">Predict</button>
-        <a asp-action="Index" class="btn btn-outline-warning ml-3 mt-3">Cancel</a>
+        <a asp-action="Index" class="btn btn-outline-warning  mx-3 mt-3">Cancel</a>
     </form>
 </body>

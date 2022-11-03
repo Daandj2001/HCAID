@@ -6,14 +6,20 @@
     <div class="row">
         <div class=" col-md-4">
             <p class="mt-5" style="font-family:verdana; font-size:30px;">Check if you have diabetes</p>
-            <p style="font-size:21px;">Reiceive a predicton by answering a couple of questions.</p>
-            <a class="btn btn-outline-primary mb-4" asp-controller="Home" asp-action="PredictForm">Predict</a>
-            <a class="btn btn-outline-secondary mb-4" asp-controller="Home" asp-action="HowDoesItWork">More info</a>
-            <p style="font-family:verdana; font-size:24px;">About diabetes.</p>
-            <p style="font-size:18px;">Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin well. Glucose then stays in your blood and doesn’t reach your cells.</p>
+            <p style="font-size:21px;">Receive a prediction by answering a couple of questions.</p>
+            <div class="mb-4">
+                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="PredictForm">Predict</a>
+                <a class="btn btn-outline-secondary mx-3" asp-controller="Home" asp-action="HowDoesItWork">More info</a>
+            </div>
+            <p style="font-family:verdana; font-size:24px;">The goal</p>
+            <p style="font-size:18px;">Our goal is to help you understand if you maybe suffering from diabetes, and help you improve your lifestyle if necessary</p>
+            <p style="font-family:verdana; font-size:24px;">What is diabetes?</p>
+            <p style="font-size:18px;">Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin well. Glucose then stays in your blood and doesn’t reach your cells. For more information about diabetes click <a href="https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes">here.</a></p>
+            <p style="font-family:verdana; font-size:24px;">Privacy</p>
+            <p style="font-size:18px;">Your data will not be stored and will only be used for this test.</p>
         </div>
         <div class="col-md-8">
-            <img src="~/Image/DiabtesImg.jpg" alt="img" class="rounded mt-5 mx-auto d-block img-fluid" />
+            <img src="~/Image/DiabtesImg.jpg" alt="img" class="rounded mt-5 pt-5 mx-auto d-block img-fluid align-middle" />
         </div>
     </div>
 </div>

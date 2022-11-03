@@ -6,12 +6,12 @@ namespace DiabetesPrediction.Models
     public class PredictViewModel
     {
         [Required(ErrorMessage = "Please select your Height in centimeters.")]
-        [DisplayName("Height in centimeters.")]
+        [DisplayName("What is your height in centimeters?")]
         [Range(50, 300, ErrorMessage = "The value should be between 50 and 300")]
         public int? Height { get; set; }
 
         [Required(ErrorMessage = "Please select your Weight in kilograms.")]
-        [DisplayName("Weight in kilograms.")]
+        [DisplayName("What is your weight in kilograms?")]
         [Range(10, 300, ErrorMessage = "The value should be between 10 and 300")]
         public int? Weight { get; set; }
 
@@ -21,11 +21,11 @@ namespace DiabetesPrediction.Models
         public int? PhysHlth { get; set; }
 
         [Required(ErrorMessage = "Please select your DiffWalk.")]
-        [DisplayName("Do you have serious difficulty walking or climbing stairs?")]
+        [DisplayName("Do you have any serious difficulty while walking or climbing stairs?")]
         public bool DiffWalk { get; set; }
 
         [Required(ErrorMessage = "Please select your Stroke.")]
-        [DisplayName("Have you had a stroke?")]
+        [DisplayName("Have you ever had a stroke?")]
         public bool Stroke { get; set; }
 
         [Required(ErrorMessage = "Please select your HeartDiseaseorAttack.")]
@@ -38,7 +38,7 @@ namespace DiabetesPrediction.Models
         public int? genHlth { get; set; }
 
         [Required(ErrorMessage = "Please select your Age.")]
-        [DisplayName("Age.")]
+        [DisplayName("What is your age?")]
         [Range(18, 120, ErrorMessage = "The value should be between 1 and 120")]
         public int? Age { get; set; }
 
