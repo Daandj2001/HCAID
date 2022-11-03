@@ -10,11 +10,11 @@
 <div class="container border border-secondary rounded-3 shadow  mt-5">
      <h3>Prediction</h3>
      @if (Model.DiabetesPrediction == 0){
-        <p style ="font-size:21px;">We predict that you <b>do not</b> have diabetes</p>
+        <p style ="font-size:21px;">We predict that you <b>do not</b> have diabetes.</p>
      }
     @if (Model.DiabetesPrediction == 1)
     {
-        <p style="font-size:21px;">We predict that you <b>do</b> have diabetes</p>
+        <p style="font-size:21px;">We predict that you <b>do</b> have diabetes.</p>
     }
     <p style="font-size:21px;">The image below explains the Machine Learning model and your prediction. Blue bars push the prediction value to the left closer to 0, this means no diabetes. Red bars push the prediction value to the right closer to 1, this means diabetes. The size of a bar indicates the degree of influence on the prediction.</p>
     <img src="data:image/png;base64, @Model.ShapImg" alt="Shap img" width="850" class="mx-auto d-block img-fluid " />
